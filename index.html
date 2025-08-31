@@ -98,10 +98,11 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            backdrop-filter: blur(20px) saturate(180%);
+            backdrop-filter: blur(10px);
             background: rgba(255, 255, 255, 0.75);
             border-bottom: 1px solid rgba(225, 44, 46, 0.2);
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: background-color 0.3s ease, border-bottom-color 0.3s ease;
+            will-change: background-color;
         }
 
         .header.scrolled {
@@ -1089,13 +1090,22 @@
     </footer>
 
     <script>
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
+        // Single optimized scroll handler
+        let ticking = false;
+        function handleScroll() {
             const header = document.getElementById('header');
             if (window.scrollY > 100) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
+            }
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(handleScroll);
+                ticking = true;
             }
         });
 
@@ -1158,25 +1168,6 @@
                 navLinks.classList.remove('open');
                 menuToggle.setAttribute('aria-expanded', 'false');
                 menuToggle.focus();
-            }
-        });
-
-        // Performance optimization - throttle scroll events
-        let ticking = false;
-        function updateOnScroll() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-            ticking = false;
-        }
-
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                requestAnimationFrame(updateOnScroll);
-                ticking = true;
             }
         });
 
