@@ -19,7 +19,7 @@
         :root {
             --red: #E12C2E;
             --red-dark: #B91C1C;
-            --red-light: #F87171;
+            --red-light: #DC2626;
             --black: #000000;
             --dark-gray: #1F1F1F;
             --gray: #374151;
@@ -99,13 +99,13 @@
             right: 0;
             z-index: 1000;
             backdrop-filter: blur(20px) saturate(180%);
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.75);
             border-bottom: 1px solid rgba(225, 44, 46, 0.2);
             transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .header.scrolled {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.85);
             box-shadow: var(--shadow-soft);
             border-bottom-color: var(--red);
         }
@@ -265,7 +265,7 @@
             margin-bottom: 1.5rem;
             line-height: 1.1;
             letter-spacing: -0.02em;
-            background: linear-gradient(135deg, var(--white) 0%, var(--red-light) 100%);
+            background: linear-gradient(135deg, var(--white) 0%, var(--red) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
