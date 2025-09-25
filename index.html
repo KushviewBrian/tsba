@@ -513,12 +513,13 @@
         .hero-about-image {
             position: relative;
             border-radius: 24px;
-            overflow: hidden;
             box-shadow: var(--shadow-strong);
             background: var(--light-gray);
-            display: block;
             min-height: 600px;
             padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .hero-about-image img {
@@ -527,13 +528,9 @@
             object-fit: cover;
         }
 
-        /* Fixed Facebook Widget Styling */
+        /* Facebook Widget Styling */
         .hero-about-image .fb-page {
-            display: block !important;
-            width: 100%;
-            height: 100%;
             border-radius: 16px;
-            overflow: hidden;
         }
 
         /* Contact Section */
