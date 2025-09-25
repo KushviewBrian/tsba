@@ -511,16 +511,16 @@
         }
 
         .hero-about-image {
+            overflow: hidden;
             position: relative;
             border-radius: 24px;
-            overflow: hidden;
             box-shadow: var(--shadow-strong);
             background: var(--light-gray);
             display: flex;
             align-items: center;
             justify-content: center;
             min-height: 400px;
-            padding: 0; /* Remove any padding */
+            padding: 0;
         }
 
         .hero-about-image img {
@@ -538,12 +538,14 @@
             margin: 0 !important;
             padding: 0 !important;
             display: block !important;
+            height: 100% !important;
         }
 
         .hero-about-image .fb-page iframe {
             border-radius: 0 !important;
             width: 100% !important;
             min-width: 100% !important;
+            height: 100% !important;
             margin: 0 !important;
             padding: 0 !important;
             border: none !important;
@@ -552,6 +554,7 @@
         .hero-about-image .fb-page span {
             width: 100% !important;
             max-width: 100% !important;
+            height: 100% !important;
             margin: 0 !important;
             padding: 0 !important;
             display: block !important;
@@ -559,11 +562,12 @@
 
         .hero-about-image .fb-page .fb-xfbml-parse-ignore {
             width: 100% !important;
+            height: 100% !important;
             margin: 0 !important;
             padding: 0 !important;
         }
 
-        /* Force Facebook widget to be full width */
+        /* Force Facebook widget to be full width and height */
         .hero-about-image .fb-page,
         .hero-about-image .fb-page *,
         .hero-about-image .fb-page iframe {
@@ -574,11 +578,13 @@
         .hero-about-image .fb-page > span {
             width: 100% !important;
             max-width: none !important;
+            height: 100% !important;
         }
 
         .hero-about-image .fb-page iframe[style] {
             width: 100% !important;
             max-width: 100% !important;
+            height: 100% !important;
         }
 
         /* Contact Section */
@@ -650,7 +656,7 @@
         /* Footer */
         .footer {
             background: var(--black);
-            color: var(--gray);
+            color: var (--gray);
             padding: 4rem 0 2rem;
         }
 
