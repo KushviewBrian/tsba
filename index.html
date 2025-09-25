@@ -537,6 +537,7 @@
             overflow: hidden;
             margin: 0 !important;
             padding: 0 !important;
+            display: block !important;
         }
 
         .hero-about-image .fb-page iframe {
@@ -545,6 +546,7 @@
             min-width: 100% !important;
             margin: 0 !important;
             padding: 0 !important;
+            border: none !important;
         }
 
         .hero-about-image .fb-page span {
@@ -552,6 +554,7 @@
             max-width: 100% !important;
             margin: 0 !important;
             padding: 0 !important;
+            display: block !important;
         }
 
         .hero-about-image .fb-page .fb-xfbml-parse-ignore {
@@ -565,6 +568,17 @@
         .hero-about-image .fb-page *,
         .hero-about-image .fb-page iframe {
             box-sizing: border-box !important;
+        }
+
+        /* Override Facebook's container styling */
+        .hero-about-image .fb-page > span {
+            width: 100% !important;
+            max-width: none !important;
+        }
+
+        .hero-about-image .fb-page iframe[style] {
+            width: 100% !important;
+            max-width: 100% !important;
         }
 
         /* Contact Section */
