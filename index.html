@@ -520,6 +520,7 @@
             align-items: center;
             justify-content: center;
             min-height: 400px;
+            padding: 0; /* Remove any padding */
         }
 
         .hero-about-image img {
@@ -532,23 +533,38 @@
         .hero-about-image .fb-page {
             width: 100% !important;
             max-width: 100% !important;
-            border-radius: 16px;
+            border-radius: 0;
             overflow: hidden;
+            margin: 0 !important;
+            padding: 0 !important;
         }
 
         .hero-about-image .fb-page iframe {
-            border-radius: 16px !important;
+            border-radius: 0 !important;
             width: 100% !important;
             min-width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
         }
 
         .hero-about-image .fb-page span {
             width: 100% !important;
             max-width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
         }
 
         .hero-about-image .fb-page .fb-xfbml-parse-ignore {
             width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        /* Force Facebook widget to be full width */
+        .hero-about-image .fb-page,
+        .hero-about-image .fb-page *,
+        .hero-about-image .fb-page iframe {
+            box-sizing: border-box !important;
         }
 
         /* Contact Section */
@@ -786,7 +802,7 @@
             top: -40px;
             left: 6px;
             background: var(--red);
-            color: var(--white);
+            color: var (--white);
             padding: 8px;
             text-decoration: none;
             border-radius: 4px;
