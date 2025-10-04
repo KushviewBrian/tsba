@@ -5,6 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Big Ash Cigar Lounge & Tobacco Stop Fort Wayne | Premium Cigars Indiana</title>
     <meta name="description" content="Fort Wayne's premier cigar lounge featuring premium cigars, tobacco products, and smoking accessories. Climate and humidity controlled cigar storage with Perdomo, Arturo Fuente, Drew Estate. Open 7 days a week at 9111 Lima Rd.">
+    <link rel="preload" as="image" href="assets/img/hero-storefront.avif" type="image/avif" imagesrcset="assets/img/hero-storefront.avif type('image/avif'), assets/img/hero-storefront.webp type('image/webp'), assets/img/hero-storefront.jpg type('image/jpeg')" imagesizes="100vw" fetchpriority="high" />
+    <!-- DEV NOTES (Future Considerations)
+         Performance / Assets:
+           - Generate responsive variants (e.g., hero-storefront-{1200,1800,2400}.avif/webp + sizes/srcset).
+           - Consider a tiny LQIP (blurred 20px wide base64) swap for hero if CLS/LCP audits suggest.
+           - If adding many gallery images, implement intersection-based lazy hydration for embeds (e.g., Facebook) & defer non-critical JS.
+           - Move large raw screenshots in assets/img/source outside the deploy root or exclude via build to reduce repo weight.
+         Caching / Delivery:
+           - Cloudflare Pages: add a _headers file with long-cache rules for immutable hashed filenames.
+           - GitHub Pages: use filename versioning for cache busting (hero-storefront.v2.avif) on future changes.
+           - Optionally add <link rel="preconnect" href="https://connect.facebook.net"> for FB SDK.
+         HTML / Accessibility:
+           - Run automated a11y audit (axe / Lighthouse); verify contrast where gradient overlaps imagery.
+           - Add landmark roles to sections if page structure grows; ensure focus styles remain visible.
+         Security / Meta:
+           - Add a minimal Content-Security-Policy (CSP) if moving to a custom host/CDN.
+           - Add Open Graph & Twitter Card meta tags for richer sharing previews.
+         Tooling / Build:
+           - If project expands, consider a lightweight build step (e.g., Vite) for CSS minification & hash generation.
+           - Integrate an image optimization script (make target) to regenerate formats & report savings.
+         Analytics / Monitoring:
+           - Add privacy-friendly analytics (e.g., Plausible) via async script after main content.
+           - Monitor Core Web Vitals (LCP: hero image; CLS: ensure dimensions for any added media).
+         Progressive Enhancement:
+           - Consider installing a Service Worker later for offline shell & caching (only if scope broadens).
+         Misc:
+           - Replace inline styles (where present) with utility classes if scaling design system.
+           - Centralize brand colors & gradients in a design tokens file (JSON) if moving to a component library.
+    -->
     <style>
         /* Modern CSS Reset */
         *, *::before, *::after {
@@ -226,12 +255,19 @@
 
         /* Hero Section */
         .hero {
+            /* Fallback first (kept original) */
             min-height: 100vh;
             position: relative;
             display: flex;
             align-items: center;
             background: linear-gradient(135deg, rgba(31, 31, 31, 0.3) 0%, rgba(0, 0, 0, 0.2) 100%),
                         url('assets/img/hero-storefront.jpg');
+            /* Modern next‑gen sources (will only load if files exist) */
+            background-image: linear-gradient(135deg, rgba(31, 31, 31, 0.3) 0%, rgba(0, 0, 0, 0.2) 100%), image-set(
+                url('assets/img/hero-storefront.avif') type('image/avif'),
+                url('assets/img/hero-storefront.webp') type('image/webp'),
+                url('assets/img/hero-storefront.jpg') type('image/jpeg')
+            );
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -836,7 +872,11 @@
             <nav class="nav" role="navigation" aria-label="Main navigation">
                 <a href="#" class="logo" aria-label="Big Ash Cigar Lounge & Tobacco Stop - Fort Wayne's Premier Cigar Destination">
                     <div class="logo-icon" aria-hidden="true">
-                        <img src="assets/img/big-ash-logo.png" alt="Big Ash Logo" style="width: 100%; height: 100%; object-fit: contain;">
+                        <picture>
+                            <source type="image/avif" srcset="assets/img/big-ash-logo.avif">
+                            <source type="image/webp" srcset="assets/img/big-ash-logo.webp">
+                            <img src="assets/img/big-ash-logo.png" alt="Big Ash Logo" width="48" height="48" style="width: 100%; height: 100%; object-fit: contain;">
+                        </picture>
                     </div>
                     <div class="logo-text">Big Ash Cigar Lounge & Tobacco Stop</div>
                 </a>
@@ -1206,6 +1246,25 @@
                 FB.XFBML.parse();
             }
         });
+
+        // (Optional) WebP support class (no network request) – could be used for future CSS tweaks
+        (function() {
+            try {
+                var img = new Image();
+                img.onload = function() { if (img.width === 1) document.documentElement.classList.add('webp'); };
+                img.src = 'data:image/webp;base64,UklGRhIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AA/vuUAAA='; // 1x1 webp
+            } catch(e) {}
+        })();
     </script>
+    <!-- Implementation notes:
+         1. Convert images locally (example):
+            brew install webp libavif
+            cwebp -q 82 assets/img/hero-storefront.jpg -o assets/img/hero-storefront.webp
+            avifenc --min 20 --max 40 --speed 6 assets/img/hero-storefront.jpg assets/img/hero-storefront.avif
+            cwebp -lossless -q 90 assets/img/big-ash-logo.png -o assets/img/big-ash-logo.webp
+            avifenc --min 0 --max 20 --speed 6 assets/img/big-ash-logo.png assets/img/big-ash-logo.avif
+         2. After adding the new files, browsers that support AVIF/WebP will automatically pick them via image-set/picture.
+         3. Keep original JPG/PNG for fallback and long-term caching.
+    -->
 </body>
 </html>
