@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Big Ash Cigar Lounge & Tobacco Stop Fort Wayne | Premium Cigars Indiana</title>
-    <meta name="description" content="Fort Wayne's premier cigar lounge featuring premium cigars, tobacco products, and smoking accessories. Walk-in humidor with Perdomo, Arturo Fuente, Drew Estate. Open 6 days a week at 9111 Lima Rd.">
+    <title>Big Ash Cigar Lounge & The Tobacco Stop Fort Wayne | Premium Cigars Indiana</title>
+    <meta name="description" content="Fort Wayne's premier cigar lounge featuring premium cigars, tobacco products, and smoking accessories. Climate and humidity controlled cigar storage with Perdomo, Arturo Fuente, Drew Estate. Open 7 days a week at 9111 Lima Rd.">
     <style>
         /* Modern CSS Reset */
         *, *::before, *::after {
@@ -513,24 +513,15 @@
         .hero-about-image {
             position: relative;
             border-radius: 24px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
             box-shadow: var(--shadow-strong);
-            background: var(--light-gray);
-            min-height: 600px;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .hero-about-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-
-        /* Facebook Widget Styling */
-        .hero-about-image .fb-page {
-            border-radius: 16px;
         }
 
         /* Contact Section */
@@ -577,7 +568,7 @@
         }
 
         .contact-info a {
-            color: var (--white);
+            color: var(--white);
             text-decoration: none;
             border-bottom: 2px solid rgba(255, 255, 255, 0.3);
             transition: border-color 0.3s ease;
@@ -602,7 +593,7 @@
         /* Footer */
         .footer {
             background: var(--black);
-            color: var (--gray);
+            color: var(--gray);
             padding: 4rem 0 2rem;
         }
 
@@ -682,6 +673,10 @@
             .contact-grid {
                 grid-template-columns: 1fr;
             }
+
+            .hero {
+                min-height: 70vh;
+            }
         }
 
         @media (max-width: 768px) {
@@ -709,12 +704,41 @@
             }
 
             .hero-cta {
-                gap: 1rem;
+                flex-direction: column;
+                align-items: center;
             }
 
             .btn {
-                padding: 0.8rem 2rem;
-                font-size: 0.9rem;
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .hours-list li {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.25rem;
+            }
+
+            .nav-link {
+                padding: 1rem;
+            }
+
+            .hero {
+                background-attachment: scroll;
+            }
+
+            .fb-page-wrapper {
+                max-width: 100%;
+                padding: 0 1rem;
+            }
+
+            .fb-page {
+                width: 100% !important;
+            }
+
+            .fb-page iframe {
+                width: 100% !important;
+                max-width: 100% !important;
             }
 
             section {
@@ -750,7 +774,12 @@
             }
 
             .hero {
-                min-height: 80vh;
+                min-height: 65vh;
+                background-attachment: scroll;
+            }
+
+            .fb-page-wrapper {
+                padding: 0 0.5rem;
             }
         }
 
@@ -768,7 +797,7 @@
             top: -40px;
             left: 6px;
             background: var(--red);
-            color: var (--white);
+            color: var(--white);
             padding: 8px;
             text-decoration: none;
             border-radius: 4px;
@@ -782,21 +811,17 @@
     </style>
 </head>
 <body>
-    <!-- Facebook SDK -->
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v23.0"></script>
-    
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
     
     <!-- Header -->
     <header class="header" id="header">
         <div class="container">
             <nav class="nav" role="navigation" aria-label="Main navigation">
-                <a href="#" class="logo" aria-label="Big Ash Cigar Lounge - Fort Wayne's Premier Cigar Destination">
+                <a href="#" class="logo" aria-label="Big Ash Cigar Lounge & The Tobacco Stop - Fort Wayne's Premier Cigar Destination">
                     <div class="logo-icon" aria-hidden="true">
                         <img src="assets/img/big-ash-logo.png" alt="Big Ash Logo" style="width: 100%; height: 100%; object-fit: contain;">
                     </div>
-                    <div class="logo-text">The Tobacco Stop & Big Ash Cigar Lounge</div>
+                    <div class="logo-text">Big Ash Cigar Lounge & The Tobacco Stop</div>
                 </a>
                 
                 <ul class="nav-links" id="nav-links">
@@ -818,8 +843,8 @@
     <section class="hero" id="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">The Tobacco Stop & Big Ash Cigar Lounge</h1>
-                <p class="hero-subtitle">Fort Wayne's premier destination for premium cigars, tobacco products, and the most comfortable cigar lounge in Indiana.</p>
+                <h1 class="hero-title">Big Ash Cigar Lounge & The Tobacco Stop</h1>
+                <p class="hero-subtitle">Fort Wayne's premier destination for premium cigars, tobacco products, and the most comfortable cigar lounge in Indiana. In business since 1995 – this is our original location.</p>
                 <div class="hero-cta">
                     <a href="#contact" class="btn btn-primary">Visit Our Lounge</a>
                     <a href="#about" class="btn btn-secondary">Explore Our Story</a>
@@ -836,12 +861,14 @@
                 <div class="hero-about fade-in">
                     <div class="hero-about-content">
                         <h2>Welcome to Excellence</h2>
-                        <p>Welcome to <strong>The Tobacco Stop & Big Ash Cigar Lounge</strong> — Fort Wayne's premier destination for premium cigars, tobacco products, and smoking accessories. Located at <strong>9111 Lima Rd</strong>, we feature a spacious walk-in humidor and Indiana's most comfortable cigar lounge.</p>
+                        <p>Welcome to <strong>Big Ash Cigar Lounge & The Tobacco Stop</strong> — Fort Wayne's premier destination for premium cigars, tobacco products, and smoking accessories. Located at <strong>9111 Lima Rd</strong>, we feature spacious climate and humidity controlled cigar storage and Indiana's most comfortable cigar lounge. In business since 1995 — this is our original location.</p>
                         <p>Our commitment to quality and exceptional customer service has made us the go-to destination for cigar enthusiasts throughout Fort Wayne and beyond. From novice smokers to seasoned aficionados, we provide an unparalleled experience in luxury and comfort.</p>
                         <a href="#lounge" class="btn btn-primary">Experience Our Lounge</a>
                     </div>
                     <div class="hero-about-image">
-                        <div class="fb-page" data-href="https://www.facebook.com/TheBigAshLounge" data-tabs="timeline,events" data-width="600" data-height="600" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/TheBigAshLounge" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/TheBigAshLounge">The Tobacco Stop &amp; Big Ash Cigar Lounge</a></blockquote></div>
+                        <div class="fb-page-wrapper">
+                            <div class="fb-page" data-href="https://www.facebook.com/TheBigAshLounge" data-tabs="timeline,events" data-width="" data-height="600" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/TheBigAshLounge" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/TheBigAshLounge">Big Ash Cigar Lounge &amp; The Tobacco Stop</a></blockquote></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -860,7 +887,7 @@
                         <div class="card-header">
                             <h3 class="card-title">Premium Cigars</h3>
                         </div>
-                        <p class="card-text">Our walk-in humidor features legendary brands including <strong>Perdomo</strong>, <strong>Arturo Fuente</strong>, <strong>Rocky Patel</strong>, <strong>Drew Estate</strong>, <strong>Oliva</strong>, <strong>Romeo y Julieta</strong>, <strong>Cohiba</strong>, and <strong>Montecristo</strong>. Each cigar is stored in perfect conditions to ensure optimal flavor and quality.</p>
+                        <p class="card-text">Our climate and humidity controlled cigar storage features legendary brands including <strong>Kristoff</strong>, <strong>Perdomo</strong>, <strong>Arturo Fuente</strong>, <strong>Rocky Patel</strong>, <strong>Drew Estate</strong>, <strong>Oliva</strong>, <strong>Romeo y Julieta</strong>, <strong>Cohiba</strong>, and <strong>Montecristo</strong>. Each cigar is stored in perfect conditions to ensure optimal flavor and quality.</p>
                     </div>
                     
                     <div class="card fade-in">
@@ -879,9 +906,9 @@
                     
                     <div class="card fade-in">
                         <div class="card-header">
-                            <h3 class="card-title">Premium Cigarettes</h3>
+                            <h3 class="card-title">Discounted Tobacco</h3>
                         </div>
-                        <p class="card-text">Full selection including <strong>Marlboro</strong>, <strong>Camel</strong>, <strong>Newport</strong>, <strong>American Spirit</strong>, <strong>Parliament</strong>, <strong>Kool</strong>, <strong>Pall Mall</strong>, and specialty varieties. Available in regular, light, menthol, and unique blends.</p>
+                        <p class="card-text">Full selection including <strong>Marlboro</strong>, <strong>Camel</strong>, <strong>Newport</strong>, <strong>American Spirit</strong>, <strong>Parliament</strong>, <strong>Kool</strong>, <strong>Pall Mall</strong>, and specialty varieties. We carry a full line of discounted tobacco and the lowest priced cigarettes in Indiana.</p>
                     </div>
                     
                     <div class="card fade-in">
@@ -896,6 +923,13 @@
                             <h3 class="card-title">Specialty Items</h3>
                         </div>
                         <p class="card-text">Unique selections including <strong>Mythical Candle Co.</strong> specialty candles with masculine scents perfect for cigar rooms, plus our exclusive <strong>Magical Mystery Drawer</strong> with rare finds and discounted singles.</p>
+                    </div>
+
+                    <div class="card fade-in" style="border: 2px solid var(--red);">
+                        <div class="card-header">
+                            <h3 class="card-title">Daily Cigar - Exclusive</h3>
+                        </div>
+                        <p class="card-text">Our Daily Cigar is an exclusively curated cigar that can only be found at Tobacco Stop and nowhere else in the world. A mild to medium smoke perfect for any time of day. Currently available in Maduro Toro, with Gordo coming soon!</p>
                     </div>
                 </div>
             </div>
@@ -914,13 +948,13 @@
                         <div class="card-header">
                             <h3 class="card-title">World-Class Amenities</h3>
                         </div>
-                        <p class="card-text">Experience Fort Wayne's most sophisticated smoking environment with premium leather seating, multiple 65" TVs, private game room with pool table, climate control, and professional-grade ventilation. Our lounge provides the perfect atmosphere for relaxation, business meetings, and social gatherings.</p>
+                        <p class="card-text">Experience Fort Wayne's most sophisticated smoking environment with premium leather seating, multiple 65" TVs, private game room with poker table and dart board, climate control, and professional-grade ventilation. Our lounge provides the perfect atmosphere for relaxation, business meetings, and social gatherings.</p>
                         
                         <div style="margin-top: 2rem;">
                             <h4 style="color: var(--ember); margin-bottom: 1rem; font-size: 1.2rem;">Premium Features:</h4>
                             <ul style="list-style: none; padding: 0; line-height: 1.8;">
                                 <li>✓ 24-Hour Member Access</li>
-                                <li>✓ Personal Humidor Lockers</li>
+                                <li>✓ Personal humidors available (first come, first serve!)</li>
                                 <li>✓ Premium Leather Seating</li>
                                 <li>✓ Multiple Entertainment Screens</li>
                                 <li>✓ Private Game Room</li>
@@ -933,17 +967,18 @@
                         <div class="card-header">
                             <h3 class="card-title" style="color: var(--white);">Exclusive Membership</h3>
                         </div>
-                        <p class="card-text">Join Fort Wayne's most exclusive cigar community with premium membership benefits including personal lockers, member pricing, exclusive events, priority seating, and guest privileges.</p>
+                        <p class="card-text">Join Fort Wayne's most exclusive cigar community with premium membership benefits including personal humidors (first come, first serve!), member pricing, exclusive events, priority seating, and guest privileges.</p>
                         
                         <div style="margin-top: 2rem;">
                             <h4 style="color: var(--white); margin-bottom: 1rem;">Member Benefits:</h4>
                             <ul style="list-style: none; padding: 0; line-height: 1.8;">
-                                <li>• Personal Humidor Locker</li>
+                                <li>• Personal humidors available (first come, first serve!)</li>
                                 <li>• Exclusive Member Pricing</li>
                                 <li>• Private Events & Tastings</li>
                                 <li>• 24/7 Lounge Access</li>
                                 <li>• Guest Privileges</li>
                                 <li>• Birthday Special Offers</li>
+                                <li>• Club members receive 10% off (excluding cigarettes and lottery)</li>
                             </ul>
                         </div>
                         
@@ -966,23 +1001,9 @@
                 <div class="grid grid-3">
                     <div class="card fade-in" style="border-left: 4px solid var(--red);">
                         <div class="card-header">
-                            <h3 class="card-title">Fuente Fridays</h3>
+                            <h3 class="card-title">Traffic Light Savings!</h3>
                         </div>
-                        <p class="card-text">Every Friday, enjoy special deals on <strong>Arturo Fuente</strong> favorites. Perfect time to try something new or stock up on your regulars.</p>
-                    </div>
-                    
-                    <div class="card fade-in" style="border-left: 4px solid var(--black);">
-                        <div class="card-header">
-                            <h3 class="card-title">Wacky Wednesday</h3>
-                        </div>
-                        <p class="card-text">Buy 4, get 1 free on select premium cigars every Wednesday. Great opportunity to explore new brands and save money.</p>
-                    </div>
-                    
-                    <div class="card fade-in" style="border-left: 4px solid var(--red-dark);">
-                        <div class="card-header">
-                            <h3 class="card-title">Mystery Drawer</h3>
-                        </div>
-                        <p class="card-text">One-of-a-kind discounted singles and surprises. You never know what rare gems you might discover in our mystery selection.</p>
+                        <p class="card-text">Stop for savings! Check the traffic light for 10%, 15%, or 20% off select products. The color tells you today's discount!</p>
                     </div>
                 </div>
             </div>
@@ -993,7 +1014,7 @@
             <div class="container">
                 <header class="section-header fade-in">
                     <h2 class="section-title">Visit Us Today</h2>
-                    <p class="section-description">Experience Fort Wayne's premier cigar destination. We're open 6 days a week with convenient hours.</p>
+                    <p class="section-description">Experience Fort Wayne's premier cigar destination. We're open 7 days a week with convenient hours.</p>
                 </header>
                 
                 <div class="contact-grid">
@@ -1019,13 +1040,13 @@
                         <div class="card-header">
                             <h3 class="card-title">What to Expect</h3>
                         </div>
-                        <p class="card-text">Whether you're a seasoned aficionado or just beginning your cigar journey, our knowledgeable staff will guide you to the perfect selection. Experience our climate-controlled walk-in humidor, comfortable lounge atmosphere, and competitive prices with regular promotions.</p>
+                        <p class="card-text">Whether you're a seasoned aficionado or just beginning your cigar journey, our knowledgeable staff will guide you to the perfect selection. Experience our climate and humidity controlled cigar storage, comfortable lounge atmosphere, and competitive prices with regular promotions.</p>
                         
                         <div style="margin: 2rem 0;"><br>
                             <h4 style="color: var(--red); margin-bottom: 1rem;">Why Choose Big Ash:</h4>
                             <ul style="list-style: none; padding: 0; line-height: 1.8;">
                                 <li>✓ Expert staff guidance</li>
-                                <li>✓ Walk-in humidor access</li>
+                                <li>✓ Climate and humidity controlled cigar storage access</li>
                                 <li>✓ 24-hour member access</li>
                                 <li>✓ Premium lounge atmosphere</li>
                                 <li>✓ Competitive pricing</li>
@@ -1036,6 +1057,7 @@
                         <div style="margin-top: 2rem;">
                             <a href="https://www.facebook.com/TheBigAshLounge" target="_blank" rel="noopener" class="btn btn-primary">Follow Us on Facebook</a>
                         </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1074,7 +1096,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 The Tobacco Stop & Big Ash Cigar Lounge. All rights reserved.</p>
+                <p>&copy; 2025 Big Ash Cigar Lounge & The Tobacco Stop. All rights reserved.</p>
                 <p style="margin-top: 0.5rem; opacity: 0.8;">Experience the finest cigars and most welcoming atmosphere in Fort Wayne.</p>
             </div>
         </div>
