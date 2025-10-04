@@ -513,9 +513,17 @@
         .hero-about-image {
             position: relative;
             border-radius: 24px;
-            overflow: hidden;
-            aspect-ratio: 4/3;
-            box-shadow: var(--shadow-strong);
+            overflow: visible;
+            display: flex;
+            align-items: stretch;
+        }
+
+        .hero-about-image .fb-page-wrapper, .hero-about-image .fb-page {
+            width: 100% !important;
+        }
+
+        .hero-about-image iframe {
+            width: 100% !important;
         }
 
         .hero-about-image img {
@@ -812,6 +820,15 @@
 </head>
 <body>
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    <div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        if (window.FB) {
+          FB.init({ xfbml: true, version: 'v19.0' });
+        }
+      };
+    </script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0" referrerpolicy="origin"></script>
     
     <!-- Header -->
     <header class="header" id="header">
@@ -1187,6 +1204,9 @@
         // Initialize animations on page load
         window.addEventListener('load', () => {
             document.body.classList.add('loaded');
+            if (window.FB && FB.XFBML && typeof FB.XFBML.parse === 'function') {
+                FB.XFBML.parse();
+            }
         });
     </script>
 </body>
