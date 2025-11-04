@@ -5,7 +5,7 @@
 - **Alternative Names**: Big Ash Lounge, Big Ash Tobacco Stop, The Big Ash
 - **Address**: 9111 Lima Rd, Fort Wayne, IN 46818
 - **Phone**: (260) 416-0636
-- **Website**: https://bigashlounge.com
+- **Website**: https://bigashtobaccostop.com
 - **Facebook**: https://www.facebook.com/TheBigAshLounge
 
 ## Business Hours
